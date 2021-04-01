@@ -16,9 +16,7 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Your Value Proposition
-
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
+            ## Find Highly Ranked Keywords Suggestions For Your Next YouTube Video 
 
             ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
 
@@ -26,19 +24,20 @@ column1 = dbc.Col(
 
             """
         ),
-        dcc.Link(dbc.Button('Your Call To Action', color='primary'), href='/predictions')
+        dcc.Link(dbc.Button('Find Your Inspiration Here', color='primary'), href='/predictions')
     ],
     md=4,
 )
 
-gapminder = px.data.gapminder()
-fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
-           hover_name="country", log_x=True, size_max=60)
+# gapminder = px.data.gapminder()
+# fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
+#            hover_name="country", log_x=True, size_max=60)
 
 column2 = dbc.Col(
     [
-        dcc.Graph(figure=fig),
-    ]
+        html.Img(src='assets/youtube-logo-new.jpg', width='800', height='300' )
+    ],
+    md=4,
 )
 
 layout = dbc.Row([column1, column2])
